@@ -1,0 +1,15 @@
+# --- configs/settings.yaml ---
+audio:
+  sample_rate: 16000
+  frame_ms: 20
+  vad_aggressiveness: 2
+  max_segment_sec: 12         # daha hızlı finalize
+  silence_follow_sec: 0.30    # beklemeyi kısalt
+
+assistant:
+  auto_copy: false
+  openai_model: gpt-4o-mini
+  require_dev_keyword: false   # ← bunu false yap
+  min_lang_prob: 0.0
+  min_chars: 8
+  force_language_en: true

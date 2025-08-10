@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "whisper-answer-assistant"
+version = "0.1.0"
+description = "Realtime EN transcript + instant EN answer (speakable)"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "faster-whisper>=1.0.0",
+  "webrtcvad>=2.0.10",
+  "sounddevice==0.4.6",
+  "numpy>=1.23",
+  "openai>=1.30.0",
+  "python-dotenv>=1.0.1",
+  "pyperclip>=1.8.2",
+  "pyyaml>=6.0.1",
+]
+
+[project.scripts]
+waa = "waa.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["waa*"]
